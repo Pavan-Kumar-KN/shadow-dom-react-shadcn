@@ -1,6 +1,7 @@
 import CountBtn from "@/components/count-btn";
 import ReactSVG from "@/assets/react.svg";
 import { Badge } from "@/components/ui/badge";
+import { DialogDemo } from "./components/DialogDemo";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Badge variant="outline">Badge</Badge>
         </a>
         <CountBtn className="bg-secondary text-black" />
+        <DialogDemo />
       </div>
     </main>
   );
