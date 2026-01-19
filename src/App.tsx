@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import CountBtn from "@/components/count-btn";
+import ReactSVG from "@/assets/react.svg";
+import { Badge } from "@/components/ui/badge";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    // Since this is the first element within our Shadow DOM, to apply dark theme using a class, add the 'dark' class to the <main> element below, it does not work in the <html> element
+    <main className="flex flex-col items-center justify-center h-screen bg-primary">
+      <div className="flex flex-col items-center gap-y-4">
+        <h1 className="text-3xl text-primary">Shadow DOM demo</h1>
+        <div className="inline-flex items-center gap-x-4">
+          <img src={ReactSVG} alt="React Logo" className="w-32" />
+          <span className="text-6xl text-primary">+</span>
+          <img src={"/vite.svg"} alt="Vite Logo" className="w-32" />
+        </div>
+        <a
+          href="https://ui.shadcn.com"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          <Badge variant="outline">Badge</Badge>
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <CountBtn className="bg-secondary text-black" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </main>
+  );
+  
 }
 
-export default App
+export default App;
